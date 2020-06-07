@@ -1,0 +1,44 @@
+<app-admin></app-admin>
+<div class="addrest">
+    <form #restInfo="ngForm" class="addrestform" (ngSubmit)="Submit(restInfo.value)" ngNativeValidate>
+            <div class="form-group">
+                <label for="restname">Name</label>
+                <input type="text" class="form-control" name="restaurantName"  placeholder="Enter restaurant name" required ngModel>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                <div class="col-2 ">
+                    <input type="radio" class="form-check-input" name="isActive" id="active" value="1" required ngModel> 
+                    <label for="active">Active</label>
+                </div>
+                <div class="col-2 offset-1">
+                    <input type="radio" class="form-check-input" name="isActive" id="inactive" value="0" required ngModel>
+                    <label for="inactive">In-Active</label>
+                </div>
+            </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="restadd">Address</label>
+                <input type="text" class="form-control" name="restaurantAddress" placeholder="Enter restaurant address" required ngModel>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="restrating">Rating</label>
+                <input type="number" class="form-control" min="1" max="5" name="restaurantRating" placeholder="Enter restaurant rating" required ngModel>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="imageUrl">Image Url</label>
+                <input type="text" class="form-control" name="imageUrl" placeholder="Enter image Url" required ngModel>
+            </div>
+            <input type="submit" class="btn btn-success buttons" value="SUBMIT">
+            <button class="btn btn-danger ml-2" (click)="addDish()">ADD DISH</button>
+    </form>
+</div>
+
+        
+
+            
+           

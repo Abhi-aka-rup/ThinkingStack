@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    font-size: 20px;
+    color: black;
+}
+
+.orderFood{
+    position: absolute;
+    top: 450px;
+    left:250px;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.total{
+    display: flex;
+    width: auto;
+    height: 68px;
+    margin-top: 5px;
+    background-image: url('../../../assets/final.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    height: 80vh;
+    margin-right: 20px;   
+}
+.search{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-top: 10px;
+    margin: 10px;
+}
+.caption {
+    padding-top: 80px;
+    text-align: left;
+    line-height: 70px;
+    font-size: 40px;
+    color: rgb(18, 58, 44);
+    margin-top: 80px;
+  }
+
+  .search-input{
+    position: absolute;
+    width: 250px;
+    border-radius: 40px;
+    border: 1px solid rgb(14, 73, 53);
+    left: 25%;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgb(14, 73, 53);
+}
+
+.forming-search{
+    filter: invert(1);
+}
+
+#search:hover .forming-search{
+filter: initial;
+}
+
+#search{
+    position: absolute;
+    cursor: pointer;
+    left: 62%;
+    
+}
+.pix{
+    opacity: 0.5;
+    height: 500PX;
+}
+
+.one{
+    margin-left: 20px;
+}
+
+.two{
+    margin-left: 280px;
+}

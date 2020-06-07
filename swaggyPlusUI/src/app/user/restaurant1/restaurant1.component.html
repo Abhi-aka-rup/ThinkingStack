@@ -1,0 +1,31 @@
+<app-user></app-user>
+<div class="filter">
+    <input type="radio" id="active" name="isActive" (click)="active(1)">
+    <label for="active"> Active</label>
+    <br>
+    <input type="radio" id="inActive" name="isActive" (click)="active(0)">
+    <label for="inActive"> In-Active</label>
+    <br>
+    <button name="buttons" onclick="window.location.reload()">CLEAR</button>
+</div>
+<div class="rest">
+    <div *ngFor='let items of restaurant'>
+        <div class="column">
+            <div class="content">
+                <img [src]="items.imageUrl" class="pic" width="275" height="180">
+                <p class="text">{{items.restaurantName}}</p>
+                <p class="activity" [hidden]="!items.isActive">
+                    Active
+                    <button class="btn btn-sm btn-outline-success buttons" (click)="onSelect(items.restaurantId)">View</button>
+                </p>
+                <p class="activity" [hidden]="items.isActive">
+                    In-Active
+                    <button class="btn btn-sm btn-outline-success buttons" (click)="onSelect(items.restaurantId)">View</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf='restaurant.length===0'>
+        <h2>Sorry not available :(</h2>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<app-user></app-user>
+    <div class="aboutrest">
+        
+        <div class="restpic">
+            <img [src]="restaurant.imageUrl" class="pic"  width="450" height="280"> 
+        </div>
+        <div class="restdesc">
+            <p class="desc">
+                <span class="head">{{restaurant.restaurantName}}</span><br>
+                Address : {{restaurant.restaurantAddress}}<br>
+                Rating : {{restaurant.restaurantRating}}
+               
+
+            </p>
+        </div>
+    </div>
+    <h1 class="menuheading">MENU</h1>
+    <div class="menu">
+        <div class="row">
+             <div *ngFor='let items of dish; let i = index'>
+                <div class="column">
+                    <div class="content">
+                        <img [src]="items.imageUrl" class="pic" width="255" height="180"> 
+                        <h3 class="text">{{items.dishName}}</h3>
+                        <p class="describe">{{items.shortDescription}}</p>
+                        <p class="prices">Rs. {{items.price}}</p>
+                        <p class="veg" [hidden]="items.isVeg">
+                            Non-Veg
+                        </p>
+                        <p class="veg" [hidden]="!items.isVeg">
+                            Veg
+                        </p>
+                        <p class="freeDelivery" [hidden]="items.freeDelivery">
+                            Free-Delivery
+                        </p>
+                        <p class="freeDelivery" [hidden]="!items.freeDelivery">
+                            No Free-Delivery
+                        </p>
+                        <div class="buttoms">
+                        <button class="btn btn-danger tabs btn-sm shadow-none" (click)="Sub(i)" style="height: 30px;" [disabled]="!restaurant.isActive">-</button>
+                        <input type="number" [value]="items.quantity" [id]="i" class="incDec">
+                        <button class="btn btn-success btn-sm shadow-none" (click)="Add(i)" style="height: 30px;" [disabled]="!restaurant.isActive">+</button></div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,31 @@
+<app-user></app-user>
+<div style="text-align: center;" id="display">
+    <div *ngFor="let dishes of order; let i=index;">
+        <table class="mx-auto mt-5 cartinfo">
+            <div *ngIf="i==0; then enRoute else delivered"></div>
+            <ng-template #enRoute>
+                <button class="mb-2 mr-5 btn btn-danger" disabled>En Route</button>
+            </ng-template>
+            <ng-template #delivered>
+                <button class="mb-2 mr-5 btn btn-success" disabled>Delivered</button>
+            </ng-template>
+            <tr class="heading table-success">
+                <th class="headname">Id</th>
+                <th class="headname">Restaurant</th>
+                <th class="headname">Dish</th>
+                <th class="headname">Quantity</th>
+                <th class="headname">Amount</th>
+                <th class="headname">Total</th>
+            </tr>
+            <tr class="headingitems table-light" *ngFor="let items of dishes">
+                <td class="tableitems">{{ items.dishId }}</td>
+                <td class="tableitems">{{ restaurantName[items.restaurantId] }}</td>
+                <td class="tableitems">{{ items.dishName }}</td>
+                <td class="tableitems">{{ items.orderQuantity }}</td>
+                <td class="tableitems">{{ items.price }}</td>
+                <td class="tableitems">{{ items.price * items.orderQuantity }}</td>
+            </tr>
+            <h5 class="mt-2 ml-3">Paid: Rs. {{ paid[dishes[0].orderId] }}</h5>
+        </table>
+    </div>
+</div>

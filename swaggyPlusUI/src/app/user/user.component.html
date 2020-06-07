@@ -1,0 +1,21 @@
+<div class="nav">
+    <div class="mr-auto">
+        <h1 class="para">swaggy<span class="coloring">plus</span></h1>
+    </div>
+    <div class="ml-auto">
+        <ul class="nav-item">
+            <li class="item"><a class="nav-link btn btn-outline-success tabs" routerLink="/user-dashboard/home" [routerLinkActive] = "['active']"><i class="fas fa-home"></i></a></li>
+            <li class="item"><a class="nav-link btn btn-outline-success tabs" routerLink="/user-dashboard/restaurant" [routerLinkActive] = "['active']"><i class="fas fa-utensils"></i></a></li>
+            <li class="item"><a class="btn btn-outline-success tabs" routerLink="/user-dashboard/cart" [routerLinkActive] = "['active']"><i class="fas fa-shopping-cart"></i></a></li>
+            <li class="item"><a class="btn btn-outline-success tabs" routerLink="/user-dashboard/order" [routerLinkActive] = "['active']"><i class="fas fa-clipboard-list"></i></a></li>
+            <li class="item"><a class="btn btn-outline-success tabs" routerLink="/user-dashboard/about" [routerLinkActive] = "['active']"><i class="fas fa-users"></i></a></li>
+             <li class="item">
+                <input id="search" type="text" class="search" placeholder="Search...">
+                <button class="btn searchBtn" (click)="search()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+<router-outlet></router-outlet>

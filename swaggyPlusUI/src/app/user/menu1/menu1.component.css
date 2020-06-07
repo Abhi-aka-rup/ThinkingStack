@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .menu {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .column {
+    float: left;
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+
+  .content {
+    padding: 10px;
+    width: 300px;
+    margin-top: 10px;
+    
+  }
+  .tabs{
+    text-decoration: none;
+    margin-left: 72px;
+    font-weight: 100px;
+}
+
+.aboutrest{
+  display: flex;
+  margin-top: 15px;
+  margin-left: 70px;
+}
+.restpic{
+  display: flex;
+  width: 40%;
+  margin-left: 100px;
+}
+.restdesc{
+  display: flex;
+  width: 60%;
+  margin-left: 50px;
+ }
+
+.pic{
+  float: left;
+  
+}
+
+.desc{
+  font-size: 23px;
+  justify-content: center;
+  margin-left: 30px;
+  margin-top: 1px;
+  color: rgb(5, 56, 5);
+}
+
+.menuheading{
+  margin-top: 50px;
+  margin-left: 690px;
+}
+
+.text{
+  color: rgb(2, 37, 2);
+}
+
+.decribe{
+  color: rgb(2, 92, 2);
+}
+
+.head{
+  font-weight: bolder;
+  font-size: 60px;
+  color: rgb(22, 94, 4);
+  margin-bottom: 10px;
+}
+
+.incDec {
+  text-align: center;
+  border: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 40px;
+  height: 30px;
+}
+
+.incDec::-webkit-inner-spin-button,
+.incDec::-webkit-outer-spin-button,
+.incDec:focus {
+  -webkit-appearance: none;
+  margin: 0;
+  outline: none;
+}
+
+.buttoms{
+  float: right;
+  margin-right: 15px;
+}

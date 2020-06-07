@@ -1,0 +1,56 @@
+<app-admin></app-admin>
+<div style="text-align: center;" class="dish">
+    <div *ngIf="dish._embedded.dishes.length==0; else dishDisplay" class="showError">
+        <h2>No dishes added</h2>
+        <button class="btn btn-danger ml-3" [routerLink]="'/admin-dashboard/dishAdd/' + restaurantId">ADD DISH</button>
+    </div>
+    <ng-template #dishDisplay>
+        <table class="mx-auto mt-5 dishinfo" id="content">
+            <button class="btn btn-danger" [routerLink]="'/admin-dashboard/dishAdd/' + restaurantId">ADD DISH</button>
+            <tr class="heading table-success">
+                <th class="headname">Id</th>
+                <th class="headname">Name</th>
+                <th class="headname">Description</th>
+                <th class="headname">Image</th>
+                <th class="headname">IsVeg</th>
+                <th class="headname">Free Delivery</th>
+                <th class="headname">Price</th>
+                <th colspan="2"></th>
+
+            </tr>
+            <tr class="headingitems table-light" *ngFor='let items of  dish._embedded.dishes'>
+                <td class="tableitems">{{items.dishId}}</td>
+                <td class="tableitems">
+                    <input type="text" [value]="items.dishName" [id]="'name_' + items.dishId">
+                </td>
+                <td class="tableitems">
+                    <input type="text" [value]="items.shortDescription" [id]="'shortDescription_' + items.dishId">
+                </td>
+                <td class="tableitems">
+                    <input type="text" [value]="items.imageUrl" [id]="'imageUrl_' + items.dishId">
+                </td>
+                <td class="tableitems">
+                    <select [id]="'isVeg_' + items.dishId">
+                        <option value="1" [selected]="items.isVeg">Veg</option>
+                        <option value="0" [selected]="!items.isVeg">Non-Veg</option>
+                    </select>
+                </td>
+                <td class="tableitems">
+                    <select [id]="'freeDelivery_' + items.dishId">
+                        <option value="1" [selected]="items.freeDelivery">Free Delivery</option>
+                        <option value="0" [selected]="!items.freeDelivery">No Free Delivery</option>
+                    </select>
+                </td>
+                <td class="tableitems">
+                    <input type="number" [value]="items.price" [id]="'price_' + items.dishId">
+                </td>
+
+                <td class="tableitems"><button class="btn btn-info" (click)="edit(items.dishId)">EDIT</button></td>
+                <td class="tableitems"><button class="btn btn-danger" (click)="delete(items.dishId)">DELETE</button>
+                </td>
+            </tr>
+        </table>
+    </ng-template>
+
+
+</div>

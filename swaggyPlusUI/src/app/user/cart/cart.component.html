@@ -1,0 +1,43 @@
+<app-user></app-user>
+<div style="text-align: center;">
+    <div *ngFor="let dishes of cart; let i = index">
+
+        <h3>{{restaurantName[dishes[0].cartId]}}</h3>
+        <table class="mx-auto mt-5 cartinfo">
+            <tr class="heading table-success">
+                <th class="headname">Id</th>
+                <th class="headname">Dish</th>
+                <th class="headname">Quantity</th>
+                <th class="headname">Amount</th>
+                <th class="headname">Total</th>
+            </tr>
+            <tr class="headingitems table-light" *ngFor="let items of dishes" [attr.id]="items.dishId">
+                <input type="hidden" [value]="items.cartId" [id]="'cart_' + items.dishId">
+                <td class="tableitems">{{ items.dishId }}</td>
+                <td class="tableitems">{{ items.dishName }}</td>
+                <td class="tableitems">
+                    <button class="btn btn-danger tabs btn-sm shadow-none" (click)="Sub(items.dishId)"
+                        style="height: 30px;">
+                        -
+                    </button>
+                    <input type="number" [id]="'quantity_' + items.dishId" [value]="items.quantity" class="incDec" />
+                    <button class="btn btn-success btn-sm shadow-none" (click)="Add(items.dishId)"
+                        style="height: 30px;">
+                        +
+                    </button>
+                </td>
+                <td class="tableitems" [id]="'price_' + items.dishId">{{ items.price }}</td>
+                <td class="tableitems" [id]="'amount_' + items.dishId">{{ items.price * items.quantity }}</td>
+            </tr>
+        </table>
+    </div>
+    <div *ngIf="cart.length==0; else purchase">
+        <h2>Your cart is empty</h2>
+    </div>
+    <ng-template #purchase>
+        <div id="order">
+            <h2 class="mt-5">Total: {{ total }}</h2>
+            <button class="btn btn-warning shadow-none" (click)="paid()">Proceed to Pay</button>
+        </div>
+    </ng-template>
+</div>

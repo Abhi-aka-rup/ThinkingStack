@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+.rest{
+  
+  max-width: 1000px;
+  margin-top: 10px;
+  margin-left: 300px;
+  margin-right: 200px;
+  margin-bottom: 10px;
+}
+
+.content {
+  background-color: white;
+  padding: 10px;
+}
+.column {
+  float: left;
+  padding: 5px;
+  margin-top: 100px;
+}
+
+.pic{
+  width: 600;
+}
+
+.text{
+  font-size: 23px;
+  color: rgb(3, 46, 3);
+  font-weight: bolder;
+}
+
+.buttons {
+  margin: 10px 0px 10px;
+  float: right;
+
+}
+
+.activity{
+  font-size: 19px;
+  color: rgb(60, 119, 60);
+}
+
+h2{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.filter{
+  position: absolute;
+  left: 30px;
+  margin-top: 120px;
+}
+

@@ -1,0 +1,116 @@
+body{
+    margin: auto;
+}
+
+
+.aboutpic{
+    text-align: center;
+}
+/* .pic1{
+     margin-top: 10px;
+    margin-left: 200px; 
+   
+} */
+
+.aboutus{
+    text-align: center;
+    color: rgb(9, 56, 9);
+}
+
+.quotes1, .quotes2, .quotes3{
+    text-align: center;
+    color: rgb(79, 148, 79);
+}
+
+.para1{
+    font-size: 25px;
+    text-align: center;
+    color: rgb(9, 56, 9);
+}
+
+.flex1{
+    display: flex;
+}
+
+.left1{
+    display: flex;
+    width: 45%;
+}
+
+.pic2{
+    margin-left: 80px;
+}
+
+.right1{
+    display: flex;
+    width: 55%;
+}
+
+.para2{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 75px;
+    margin-right: 40px;
+    color: rgb(9, 56, 9);
+}
+
+.flex2{
+    display: flex;
+    margin-top: 30px;
+}
+
+.left2{
+    display: flex;
+    width: 60%;
+}
+
+.right2{
+    display: flex;
+    width: 40%;
+}
+
+.para3{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 210px;
+    color: rgb(9, 56, 9);
+}
+
+.pic3{
+    margin-left: 200px;
+}
+
+.flex3{
+    display: flex;
+    margin-top: 30px;
+}
+
+.left3{
+    display: flex;
+    width: 45%;
+}
+
+.pic4{
+    margin-left: 150px;
+}
+
+.right3{
+    display: flex;
+    width: 55%;
+}
+
+.para4{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 100px;
+    margin-right: 80px;
+    color: rgb(9, 56, 9);
+}
+
+.para5{
+    font-size: 25px;
+    text-align: center;
+    color: rgb(9, 56, 9);
+    margin-bottom: 30px;
+}

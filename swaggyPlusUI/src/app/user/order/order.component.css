@@ -1,0 +1,28 @@
+.cartinfo{
+    border: 0px solid black;
+    border-collapse: collapse;
+}
+
+.headname, .tableitems{
+    padding: 25px;
+    text-align: left;
+}
+
+.headname{
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(0, 29, 0);
+    text-align: center;
+  }
+
+  .tableitems{
+    font-size: 15px;
+    text-align: center;
+  }
+
+h2{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+
+}

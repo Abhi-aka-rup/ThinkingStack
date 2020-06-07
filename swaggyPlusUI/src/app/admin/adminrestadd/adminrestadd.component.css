@@ -1,0 +1,28 @@
+.addrest{
+    margin-left: 520px;
+    margin-top: 50px;
+}
+
+.form-control{
+    width: 300px;
+}
+
+.form-group{
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(2, 41, 2);
+}
+
+.row{
+    margin-left: 5px;
+}
+
+.buttons{
+    margin-left: 50px;    
+}
+
+.addrestform{
+   
+    width: 680px;
+    
+}

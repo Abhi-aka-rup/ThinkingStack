@@ -1,0 +1,48 @@
+<app-admin></app-admin>
+<div style="text-align: center;" id="content">
+    <table class="mx-auto mt-5 restinfo">
+
+        <tr class="heading table-success">
+            <th class="headname">Id</th>
+            <th class="headname">Name</th>
+            <th class="headname">Image Url</th>
+
+            <th class="headname">IsActive</th>
+            <th class="headname">Address</th>
+            <th class="headname">Rating</th>
+            <th colspan="3"></th>
+        </tr>
+        <tr class="headingitems table-light" *ngFor='let items of restaurant'>
+            <td class="tableitems">{{items.restaurantId}}</td>
+            
+            <td class="tableitems">
+                <input type="text" [value]="items.restaurantName" [id]="'name_' + items.restaurantId">
+            </td>
+            <td class="tableitems">
+                <input type="text" [value]="items.imageUrl" [id]="'image_' + items.restaurantId">
+            </td>
+            <td class="tableitems">
+                <select [id]="'active_' + items.restaurantId">
+                    <option value="1" [selected] = "items.isActive">Active</option>
+                    <option value="0" [selected] = "!items.isActive">In-Active</option>
+                </select>
+            </td>
+            
+            <td class="tableitems">
+                <input type="text" [value]="items.restaurantAddress" [id]="'address_' + items.restaurantId">
+            </td>
+            <td class="tableitems">
+                <input type="number" [value]="items.restaurantRating" [id]="'rating_' + items.restaurantId" min="1" max="5">
+            </td>
+            <td class="tableitems"><button class="btn btn-info" (click)="edit(items.restaurantId)">EDIT</button></td>
+            
+            <td class="tableitems"><a role="button" class="btn btn-info" [routerLink]="['/admin-dashboard/dishEdit', items.restaurantId]" target="_blank">EDIT DISHES</a>
+            </td>
+            <td class="tableitems"><button class="btn btn-danger" (click)="delete(items.restaurantId)">DELETE</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+</div>

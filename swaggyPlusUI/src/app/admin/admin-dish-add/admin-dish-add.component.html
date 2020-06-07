@@ -1,0 +1,59 @@
+<app-admin></app-admin>
+<div class="addrest">
+    <form #dishInfo="ngForm" class="addrestform" (ngSubmit)="Submit(dishInfo.value)" ngNativeValidate>
+            <div class="form-group">
+                <label for="dishname">Name</label>
+                <input type="text" class="form-control" name="dishName" placeholder="Enter dish name" required ngModel>
+            </div>
+            <br>
+            
+            <div class="form-group">
+                <label for="dishdesc">Description</label>
+                <input type="text" class="form-control" name="shortDescription" placeholder="Enter description" required ngModel>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="dishimg">Image Url</label>
+                <input type="text" class="form-control" name="imageUrl" placeholder="Enter Image" required ngModel>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                <div class="col-2 ">
+                    <input type="radio" class="form-check-input" name="isVeg" id="veg" value="1" required ngModel> 
+                    <label for="veg">Veg</label>
+                </div>
+                <div class="col-2 offset-1">
+                    <input type="radio" class="form-check-input" name="isVeg" id="nonveg" value="0" required ngModel>
+                    <label for="nonveg">Non-Veg</label>
+                </div>
+            </div>
+            </div>
+                <br>
+                <div class="form-group">
+                    <p>Free Delivery</p>
+                    <div class="row">
+                    <div class="col-2 ">
+                        <input type="radio" class="form-check-input" name="freeDelivery" id="free" value="1" required ngModel> 
+                        <label for="free">Available</label>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <input type="radio" class="form-check-input" name="freeDelivery" id="nofree" value="0" required ngModel>
+                        <label for="nofree">Unavailable</label>
+                    </div>
+                </div>
+                </div>
+                <br>
+            <div class="form-group">
+                <label for="dishprice">Price</label>
+                <input type="number" class="form-control" name="price"  placeholder="Enter dish price" required ngModel>
+            </div>
+            <input type="submit" class="btn btn-success buttons" value="SUBMIT">
+    </form>
+    <br>
+</div>
+
+        
+
+            
+           
