@@ -17,46 +17,53 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpClient.get('http://127.0.0.1:8080/api/users/search/findByOrderByOrderIdDesc')
-    .subscribe(
-      (res) => {
-        let data = JSON.parse(JSON.stringify(res))._embedded.users
-        console.log(data)
-        //display order is empty
-        if (data.length == 0)
-          document.getElementById('display').innerHTML = '<h2>You have not ordered. Go and order for tasty food.</h2>'
-          
-        data.forEach(element => {
-          const url = element._links.dishes.href
-          this.paid[element.orderId] = 0
+      .subscribe(
+        (res) => {
+          let data = JSON.parse(JSON.stringify(res))._embedded.users
+          console.log(data)
+          //display order is empty
+          if (data.length == 0)
+            document.getElementById('display').innerHTML = '<h2>You have not ordered. Go and order for tasty food.</h2>'
 
-          this.httpClient.get(url).subscribe(
-            res => {
-              const dishes = JSON.parse(JSON.stringify(res))._embedded.dishes
-              this.order.push(dishes)
-              this.order.sort((a,b) => 0 - (a[0].orderId > b[0].orderId ? 1 :-1))
-              dishes.forEach(items => {
-                this.paid[items.orderId] += (items.orderQuantity * items.price)
-                if (this.restaurantName[items.restaurantId] == undefined) {
-                  this.httpClient.get('http://127.0.0.1:8080/api/restaurants/' + items.restaurantId).subscribe(
-                    res => {
-                      this.restaurantName[items.restaurantId] = JSON.parse(JSON.stringify(res)).restaurantName
-                    },
-                    err => {
-                      console.log(err)
-                    }
+          data.forEach(element => {
+            const url = element._links.dishes.href
+            this.paid[element.orderId] = 0
+
+            this.httpClient.get(url).subscribe(
+              res => {
+                const dishes = JSON.parse(JSON.stringify(res))._embedded.dishes
+                if (dishes.length == 0)
+                  this.httpClient.delete('http://127.0.0.1:8080/api/users/' + element.orderId).subscribe(
+                    res => { },
+                    err => { console.log(err) }
                   )
+                else {
+                  this.order.push(dishes)
+                  this.order.sort((a, b) => 0 - (a[0].orderId > b[0].orderId ? 1 : -1))
                 }
-              });
-            },
-            err => {
-              console.log(err)
-            }
-          )
-        });
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+                dishes.forEach(items => {
+                  this.paid[items.orderId] += (items.orderQuantity * items.price)
+                  if (this.restaurantName[items.restaurantId] == undefined) {
+                    this.httpClient.get('http://127.0.0.1:8080/api/restaurants/' + items.restaurantId).subscribe(
+                      res => {
+                        this.restaurantName[items.restaurantId] = JSON.parse(JSON.stringify(res)).restaurantName
+                      },
+                      err => {
+                        console.log(err)
+                      }
+                    )
+                  }
+                });
+              },
+              err => {
+                console.log(err)
+              }
+            )
+          });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
-}
+}  
