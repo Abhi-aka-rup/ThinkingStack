@@ -36,10 +36,10 @@ export class AdminrestaddComponent implements OnInit {
     )
   }
 
-  addDish() {
+ /*addDish() {
     if (this.restaurantId == undefined)
       alert("Please add restaurant first")
     else
       window.open('/admin-dashboard/dishAdd/' + this.restaurantId, '_blank')
-  }
+  }*/
 }

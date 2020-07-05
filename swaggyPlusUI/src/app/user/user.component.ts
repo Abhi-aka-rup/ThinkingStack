@@ -15,6 +15,6 @@ export class UserComponent implements OnInit {
 
   search(){
     const search = (document.getElementById('search') as HTMLInputElement).value
-    this.route.navigate(['/user/restaurant1/' + search])
+    this.route.navigate(['/user-dashboard/restaurant/' + search])
   }
 }
